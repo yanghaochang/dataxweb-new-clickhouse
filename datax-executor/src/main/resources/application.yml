@@ -1,0 +1,36 @@
+# web port
+server:
+#  port: ${server.port}
+  port: 8089
+
+# log config
+logging:
+  config: classpath:logback.xml
+#  path: ${data.path}/applogs/executor/jobhandler
+  path: /home/gkjx/datax/applogs/executor/jobhandler
+
+datax:
+  job:
+    admin:
+      ### datax admin address list, such as "http://address" or "http://address01,http://address02"
+      addresses: http://127.0.0.1:8088
+#      addresses: http://127.0.0.1:${datax.admin.port}
+    executor:
+      appname: datax-executor
+      ip:
+      port: 9999
+#      port: ${executor.port:9999}
+      ### job log path
+      logpath: /home/gkjx/datax/applogs/executor/jobhandler
+#      logpath: ${data.path}/applogs/executor/jobhandler
+      ### job log retention days
+      logretentiondays: 30
+    ### job, access token
+    accessToken:
+
+  executor:
+    jsonpath: /home/gkjx/datax/bin/json/
+#    jsonpath: ${json.path}
+
+  pypath: /datax/bin/datax.py
+#  pypath: ${python.path}
